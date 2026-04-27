@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# 🌍 Snap&Map — AI-Powered Community Needs & Volunteer Matching
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 📌 Project Overview
+**Snap&Map** is a real-time, AI-driven platform designed to bridge the gap between ground-level community needs and volunteers. It provides field workers with high-speed, accessible tools to report issues—such as infrastructure damage or local resource shortages—using only their voice or a photo. By utilizing Google’s Gemini AI, the platform turns unstructured data (like speech and paper forms) into actionable map markers instantly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ⚠️ IMPORTANT: Backend Connectivity
+> **Note:** The full production backend has not been uploaded to this repository yet. Currently, the platform operates using high-fidelity frontend simulations. 
+> 
+> **All AI data extraction results, JSON parsing, and API responses can be verified directly via the Browser Console (F12 > Console).**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 💡 The Solution
+Snap&Map turns every citizen into a first responder through:
+*   **Instant Reporting:** Field workers snap photos of paper surveys or speak reports.
+*   **AI Structuring:** Google Gemini AI extracts critical data and categories.
+*   **Social Verification:** Volunteers verify reports through a decentralized trust system.
+*   **Gamified Impact:** Users grow a digital "Impact Tree" by helping others.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Key Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 🗺️ Living Map Homepage
+Real-time interactive map seeded with service request data. **Critical needs pulse red** (urgency ≥ 8), while **standard needs pulse blue.**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 📸 Snap & Map AI
+Upload a photo of any paper form or scene; **Gemini Vision** extracts titles, urgency, and affected population data to pin it to the map automatically.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🎤 Voice-First Reporting
+Hold-to-speak interface using **Web Speech API**. The transcript is processed by the **Gemini 2.0/Ollama pipeline** into a structured report.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🛡️ Trust Circle & Certification
+Community voting system. Reports verified by 3+ users earn a **"Community Certified"** badge.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🌳 Profile & Impact Tree
+Gamified volunteer tracking. Your **Impact Tree grows 1 layer per task completed**, evolving your title from **Seedling to Forest Guardian.**
+
+---
+
+## 🤖 AI Waterfall Pipeline
+To ensure zero downtime, the app follows a intelligent fallback logic:
+1. **Google Gemini 2.0 Flash** — Primary Engine
+2. **Google Gemini 1.5 Flash** — High-quota Fallback
+3. **OpenAI GPT-4o-mini** — Redundancy Fallback
+4. **Local Ollama (gemma3:4b)** — Offline Testing Fallback
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React 18 + TypeScript |
+| **Map Engine** | React-Leaflet + OpenStreetMap |
+| **Primary AI** | Google Gemini 2.0 API |
+| **Local AI** | Ollama (gemma3:4b) |
+| **Speech** | Web Speech API |
+| **Deployment** | **Netlify** |
+
+---
+
+## 🚀 Installation & Setup
+
+### Prerequisites
+*   Node.js v18+
+*   Gemini API Key
+
+### Step 1: Clone and Install
+```bash
+git clone https://github.com/kavyabhardwaj2004/g_soln_challenge.git
+cd g_soln_challenge
+npm install
